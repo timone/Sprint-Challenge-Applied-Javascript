@@ -2,7 +2,6 @@ class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
     this.tabElement = tabElement;
-    
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = tabElement.dataset.tab; 
        
@@ -17,7 +16,6 @@ class TabLink {
       this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
     }
   
-
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
      this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
@@ -31,6 +29,7 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
+  
     tabs.forEach(tab => tab.classList.remove('active-tab'))
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
